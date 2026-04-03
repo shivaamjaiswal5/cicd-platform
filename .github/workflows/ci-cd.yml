@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-deploy:
@@ -23,8 +24,15 @@ jobs:
         run: docker build -t cicd-backend ./backend
 
       - name: Ensure Minikube Running
+        shell: powershell
         run: |
-          minikube status || minikube start
+          minikube status
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "Minikube not running. Starting..."
+            minikube start
+          } else {
+            Write-Host "Minikube already running"
+          }
 
       - name: Set Kubernetes Context
         run: kubectl config use-context minikube

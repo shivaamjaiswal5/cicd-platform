@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "shivaamjaiswal5/cicd-platform",
+  "pipelineDirectory": "cicd-platform",
+  "workspaceDirectory": "cicd-platform\\cicd-platform",
+  "repositories": {
+    "shivaamjaiswal5/cicd-platform": {
+      "repositoryPath": "cicd-platform\\cicd-platform",
+      "lastRunOn": "04/03/2026 15:55:43 +05:30"
+    }
+  },
+  "lastRunOn": "04/03/2026 20:19:22 +05:30"
+}
